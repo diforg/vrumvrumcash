@@ -2,10 +2,18 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JourneyController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('journeys', [JourneyController::class, 'index'])->name('journeys.index');
+Route::post('journeys', [JourneyController::class, 'store']);
+Route::delete('journeys/{id}', [JourneyController::class, 'destroy'])->name('journeys.destroy');
+Route::get('journeys/create', [JourneyController::class, 'create'])->name('journeys.create');
+Route::get('journeys/weekly-summary', [JourneyController::class, 'weeklySummary'])->name('journeys.weeklySummary');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
