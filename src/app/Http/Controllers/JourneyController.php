@@ -48,4 +48,12 @@ class JourneyController extends Controller
 
         return redirect()->route('journeys.index')->with('success', 'Jornada excluída com sucesso!');
     }
+
+    public function weeklySummary()
+    {
+        $weeklyTotals = $this->journeyRepo->weeklySummary();
+    
+        return view('journeys.weekly-summary', compact('weeklyTotals'));
+    }
+
 }

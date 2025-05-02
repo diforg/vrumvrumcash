@@ -16,8 +16,11 @@
                     </div>
                 </div>
                 @endif
-            
+
                 <div class="p-6 text-gray-900 text-right">
+                    <a href="{{ route('journeys.weeklySummary') }}" class="btn btn-primary px-6 py-2 mr-1 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-200">
+                        Ver Resumo Semanal
+                    </a>                
                     <a href="{{ route('journeys.create') }}" class="btn btn-primary px-6 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-200">+</a>
                 </div>
                 <div class="p-6 text-gray-900">
